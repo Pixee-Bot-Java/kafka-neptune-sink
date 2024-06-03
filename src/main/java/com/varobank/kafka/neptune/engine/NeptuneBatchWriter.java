@@ -223,7 +223,7 @@ public class NeptuneBatchWriter {
             long ts_ms = payload.has(TS_MS) ? payload.getLong(TS_MS) : 0;
             long insertDateTime = batchTime;
             String op = payload.getString(OP);
-            if (op.equals(DELETE)) {
+            if (DELETE.equals(op)) {
                 if (payload.has(BEFORE)) {
                     JSONObject before = payload.getJSONObject(BEFORE);
                     query.deleteVertex(before, topic, op, ts_ms, insertDateTime);
@@ -245,7 +245,7 @@ public class NeptuneBatchWriter {
                 long ts_ms = payload.has(TS_MS) ? payload.getLong(TS_MS) : 0;
                 long insertDateTime = batchTime;
                 String op = payload.getString(OP);
-                if (op.equals(DELETE)) {
+                if (DELETE.equals(op)) {
                 } else {
                     if (payload.has(AFTER)) {
                         JSONObject after = payload.getJSONObject(AFTER);

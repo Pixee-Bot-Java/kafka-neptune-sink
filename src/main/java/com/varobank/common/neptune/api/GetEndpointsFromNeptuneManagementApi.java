@@ -100,7 +100,7 @@ public class GetEndpointsFromNeptuneManagementApi implements ClusterEndpointsFet
 
             if (credentials != null){
                 builder = builder.withCredentials(credentials);
-            } else if (!iamProfile.equals(DEFAULT_PROFILE)){
+            } else if (!DEFAULT_PROFILE.equals(iamProfile)){
                 builder = builder.withCredentials(new ProfileCredentialsProvider(iamProfile));
             }
 
