@@ -26,6 +26,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 package com.varobank.kafka.neptune.utils;
 
 import com.varobank.common.gremlin.utils.RetryCondition;
+import java.security.SecureRandom;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -33,7 +34,7 @@ import java.util.Random;
 
 public class RetryClient {
 
-    private static final Random random = new Random();
+    private static final Random random = new SecureRandom();
     private static final Logger logger = LoggerFactory.getLogger(RetryClient.class);
 
     public int retry(Runnable task, int retryCount, int baseMillis, RetryCondition... conditions) throws Exception {
