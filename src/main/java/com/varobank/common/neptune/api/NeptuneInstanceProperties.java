@@ -97,15 +97,15 @@ public class NeptuneInstanceProperties {
     }
 
     public boolean isAvailable(){
-        return getStatus().equalsIgnoreCase("Available");
+        return "Available".equalsIgnoreCase(getStatus());
     }
 
     public boolean isPrimary() {
-        return getRole().equalsIgnoreCase("writer");
+        return "writer".equalsIgnoreCase(getRole());
     }
 
     public boolean isReader() {
-        return getRole().equalsIgnoreCase("reader");
+        return "reader".equalsIgnoreCase(getRole());
     }
 
     @Override
