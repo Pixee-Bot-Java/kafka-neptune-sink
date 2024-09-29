@@ -25,6 +25,9 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 package com.varobank.common.neptune.api;
 
 public class EnvironmentVariableUtils {
+    private EnvironmentVariableUtils() {
+    }
+    
     public static String getMandatoryEnv(String name) {
 
         if (isNullOrEmpty(System.getenv(name))) {

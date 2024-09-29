@@ -29,6 +29,9 @@ import com.amazonaws.regions.Regions;
 import org.apache.commons.lang3.StringUtils;
 
 public class RegionUtils {
+    private RegionUtils() {
+    }
+    
     public static String getCurrentRegionName(){
         String result = EnvironmentVariableUtils.getOptionalEnv("AWS_REGION", null);
         if (StringUtils.isEmpty(result)) {
